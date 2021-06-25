@@ -3,3 +3,5 @@
 <p><%= @event.location %></p>
 
 <p><%= @event.date %></p>
+
+<%= link_to 'Attend',attendances_path(attendance: {event_id:@event.id, attendee_id:current_user.id}), method: :post ,class:"btn bg-primary text-white"%>
