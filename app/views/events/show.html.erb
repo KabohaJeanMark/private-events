@@ -5,3 +5,12 @@
 <p><%= @event.date %></p>
 
 <%= link_to 'Attend',attendances_path(attendance: {event_id:@event.id, attendee_id:current_user.id}), method: :post ,class:"btn bg-primary text-white"%>
+
+<h2>List of attendees</h2>
+<ul>
+      <% @event.attendees.each do |attendee| %>
+          <li>
+            <%= attendee.email %>
+            </li>
+      <% end %>
+</ul>
