@@ -5,5 +5,4 @@ class Event < ApplicationRecord
 
   scope :past, -> { where('date < ?', DateTime.now) }
   scope :upcoming, -> { where('date >= ?', DateTime.now) }
-
 end
