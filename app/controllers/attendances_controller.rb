@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.new(attendance_params)
     if @attendance.save
-      redirect_to @attendance
+      redirect_to current_user
     else
       render :new
     end
