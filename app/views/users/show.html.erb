@@ -18,3 +18,12 @@
   <% end %>
 </ul>
 
+<h1>List of your created events</h1>
+<ol>
+  <% @user_events.each do |event| %>
+    <li>
+      <%= event.name%>
+    </li>
+  <% end %>
+</ol>
+

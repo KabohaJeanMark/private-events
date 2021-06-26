@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :attendees, class_name: 'User', through: :attendances, source: 'attendee'
 
-  scope: past, -> {where ('date < ?', DateTime.now) }
-  scope: upcoming, -> {where ('date >= ?', DateTime.now) }
+  scope :past, -> { where('date < ?', DateTime.now) }
+  scope :upcoming, -> { where('date >= ?', DateTime.now) }
+
 end
