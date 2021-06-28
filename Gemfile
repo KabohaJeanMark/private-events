@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add the devise gem to handle Authentication
 gem 'devise'
+
+# Add the bootstrap sass gem
+gem 'bootstrap-sass', '3.4.1'

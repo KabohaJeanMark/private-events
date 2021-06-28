@@ -16,7 +16,7 @@
       <div class="container">
         <%= link_to "Private Events", root_path %>
         <nav>
-          <ul>
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", root_path %></li>
             <% if user_signed_in? %>
             <li><%= link_to "Create New Event", new_event_path%></li>
@@ -29,8 +29,10 @@
         </nav>
       </div>
     </header>
-        
-    
-    <%= yield %>
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main> 
   </body>
 </html>
