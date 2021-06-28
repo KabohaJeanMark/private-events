@@ -12,15 +12,24 @@
   </head>
 
   <body>
-    <br />
-    <%= link_to "Home", root_path %>
-    <% if user_signed_in? %>
-      <%= link_to "Create New Event", new_event_path%>
-      <%= link_to "Show User Events", user_path(current_user)%>
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign Up or Sign In", new_user_registration_path %>
-    <% end %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Private Events", root_path %>
+        <nav>
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <% if user_signed_in? %>
+            <li><%= link_to "Create New Event", new_event_path%></li>
+            <li><%= link_to "Show User Events", user_path(current_user)%></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign Up or Sign In", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
+        
     
     <%= yield %>
   </body>
