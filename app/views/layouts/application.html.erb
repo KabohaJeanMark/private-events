@@ -13,13 +13,15 @@
 
   <body>
     <br />
+    <%= link_to "Home", root_path %>
     <% if user_signed_in? %>
+      <%= link_to "Create New Event", new_event_path%>
+      <%= link_to "Show User Events", user_path(current_user)%>
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <%= link_to "Create a New Event", new_event_path%>
-      <%= link_to "Show user events", user_path(current_user)%>
     <% else %>
       <%= link_to "Sign Up or Sign In", new_user_registration_path %>
     <% end %>
+    
     <%= yield %>
   </body>
 </html>
