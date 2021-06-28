@@ -12,18 +12,20 @@
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-top navbar-inverse">
       <div class="container">
+      <span class="navbar-brand">
         <%= link_to "Private Events", root_path %>
+      </span>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", root_path %></li>
+          <ul class="navbar-nav">
+            <li ><%= link_to "Home", root_path %></li>
             <% if user_signed_in? %>
-            <li><%= link_to "Create New Event", new_event_path%></li>
-            <li><%= link_to "Show User Events", user_path(current_user)%></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+            <li class="nav-item"><%= link_to "Create New Event", new_event_path%></li>
+            <li class="nav-item"><%= link_to "Show User Events", user_path(current_user)%></li>
+            <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% else %>
-            <li><%= link_to "Sign Up or Sign In", new_user_registration_path %></li>
+            <li class="nav-item"><%= link_to "Sign Up or Sign In", new_user_registration_path %></li>
             <% end %>
           </ul>
         </nav>
