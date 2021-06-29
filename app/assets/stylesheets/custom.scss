@@ -1,0 +1,12 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+section {
+  overflow: auto;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}

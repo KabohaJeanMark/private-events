@@ -1,0 +1,30 @@
+<div class="center jumbotron">
+  <h1>List of Events you are attending</h1>
+
+  <h2>Upcoming events</h2>
+  <ul>
+    <% @my_upcoming_events.each do |event| %>
+      <li>
+        <%= event.name%>
+      </li>
+    <% end %>
+  </ul>
+
+  <h2>Past events</h2>
+  <ul>
+    <% @my_past_events.each do |event| %>
+      <li>
+        <%= event.name%>
+      </li>
+    <% end %>
+  </ul>
+
+  <h1>List of your created events</h1>
+  <ol>
+    <% @user_events.each do |event| %>
+      <li>
+        <%= event.name%>
+      </li>
+    <% end %>
+  </ol>
+</div>
